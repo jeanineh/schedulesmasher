@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><%= @meeting.title %></h2>
+</p>
+
+<p>
+  <%= @meeting.description %>
+</p>
+</br>
+<p>
+Schedule goes here
+</p>
+</br>
+<h3>Participation Link</h3>
+<a href="javascript:ReverseDisplay('share')">
+Click to share this meeting with whoever you'd like:
+</a>
+
+<div id="share" style="display:none;">
+http://localhost:3000/meetings/<%= @meeting.id %>
+</div>
+
+<script type="text/javascript" language="JavaScript"><!--
+function HideContent(d) {
+document.getElementById(d).style.display = "none";
+}
+function ShowContent(d) {
+document.getElementById(d).style.display = "block";
+}
+function ReverseDisplay(d) {
+if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
+else { document.getElementById(d).style.display = "none"; }
+}
+//--></script>
