@@ -1,9 +1,11 @@
-require 'calendar_events_helper.rb'
-
 class Meeting < ActiveRecord::Base
 
-	def self.read_file(filename)
+	def self.read_file(file)
 		contents = []
-		return CalendarEventsHelper.parse(filename)
+		File.open(file) do |f|
+			f.each_line do |line|
+				contents.append(line)
+			end
+		end
 	end
 end
