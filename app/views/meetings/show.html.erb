@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<% if !@testt.nil? %>
+	<% @testt.each do |t| %>
+		<%= t %>
+	<% end %>
+<% end %>
 <p>
   <h2><%= @meeting.title %></h2>
 </p>
@@ -7,6 +11,15 @@
 <p>
   <%= @meeting.description %>
 </p>
+
+<%= form_tag uploader_path, :method => 'get' do %>
+  <%= hidden_field_tag :id, params[:id] %>
+  <label for="file">Select a calendar</label><%= file_field_tag "file" %>
+  <%= submit_tag 'Upload'%>
+<% end %>
+
+
+
 </br>
 <p>
 Schedule goes here
@@ -33,3 +46,5 @@ if(document.getElementById(d).style.display == "none") { document.getElementById
 else { document.getElementById(d).style.display = "none"; }
 }
 //--></script>
+
+
