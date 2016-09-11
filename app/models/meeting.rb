@@ -1,3 +1,4 @@
+
 class Meeting < ActiveRecord::Base
 	require 'icalendar'
 	#include CalendarEventsHelper::Calendar
