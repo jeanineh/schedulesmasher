@@ -1,7 +1,8 @@
+require 'icalendar'
 
 module CalendarEventsHelper
 
-	def self.parse(pathname)
+	def parse(pathname)
 		@calendar_file = ""
 		@arrayOfCalendars = []
 

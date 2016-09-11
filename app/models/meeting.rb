@@ -1,9 +1,12 @@
-require 'calendar_events_helper.rb'
-
 class Meeting < ActiveRecord::Base
+	require 'icalendar'
+	#include CalendarEventsHelper::Calendar
 
+	# gets an array of calendar events
 	def self.read_file(filename)
-		contents = []
-		return CalendarEventsHelper.parse(filename)
+		uploaded_file = File.open(filename)
+		events = Icalendar::Event.parse(uploaded_file)
+		event = events.first
+		return event
 	end
 end
