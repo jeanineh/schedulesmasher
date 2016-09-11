@@ -65,7 +65,11 @@ class MeetingsController < ApplicationController
   def uploader
     @meeting = Meeting.find(params[:id])
     uploaded_file = params[:file]
-    session[:cal] = Meeting.read_file(uploaded_file)
+    eventsArray = Meeting.read_file(uploaded_file)
+    Meeting.save_to_db(eventsArray)
+
+    session[:cal] = eventsArray[0]
+
     respond_to do |format|
       format.html { redirect_to @meeting, notice: 'Schedule successfully uploaded.' }
     end
