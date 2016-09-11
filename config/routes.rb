@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :team_members
+  resources :team_members
   resources :meetings
 
     # Routes for Home
