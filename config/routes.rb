@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
     # Routes for Home
   get '/' => 'home#home', as: :home
+
+  get 'uploader' => 'meetings#uploader', as: :uploader
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
