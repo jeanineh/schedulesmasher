@@ -1,22 +1,29 @@
 class TeamMember < ActiveRecord::Base
-	require 'icalendar'
-	#include CalendarEventsHelper::Calendar
+  require 'icalendar'
+  #include CalendarEventsHelper::Calendar
 
-	# gets an array of calendar events
-	def self.read_file(filename)
-		uploaded_file = File.open(filename)
-		events = Icalendar::Event.parse(uploaded_file)
-		#event = events.first
-		#return event
+  belongs_to :meeting
 
-		allEvents = []
-		# Iterate through each calendar 
-		for event in events
-			# Each event is stored in the allEvents array as an array [<starttime>, <endtime>]
-			newEvent = [event.dtstart, event.dtend]
-			allEvents.append(newEvent)
-		end
+  # gets an array of calendar events
+  def self.read_file(filename)
+    uploaded_file = File.open(filename)
+    events = Icalendar::Event.parse(uploaded_file)
+    #event = events.first
+    #return event
 
-		return allEvents
-	end
-end
+    allEvents = []
+    # Iterate through each calendar 
+    for event in events
+      # Each event is stored in the allEvents array as an array [<starttime>, <endtime>]
+      newEvent = [event.dtstart, event.dtend]
+      allEvents.append(newEvent)
+    end
+
+    return allEvents
+  end
+
+  def proper_name
+    "#{name}"
+  end
+
+  end

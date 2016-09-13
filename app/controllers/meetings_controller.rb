@@ -10,6 +10,7 @@ class MeetingsController < ApplicationController
   # GET /meetings/1
   # GET /meetings/1.json
   def show
+    @team_members = @meeting.team_members
   end
 
   # GET /meetings/new

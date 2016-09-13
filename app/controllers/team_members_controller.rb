@@ -63,7 +63,7 @@ class TeamMembersController < ApplicationController
   end
 
   def uploader
-    @team_member = params[:id]
+    @team_member = TeamMember.find(params[:id])
     uploaded_file = params[:file]
     eventsArray = TeamMember.read_file(uploaded_file)
     #Meeting.save_to_db(eventsArray)

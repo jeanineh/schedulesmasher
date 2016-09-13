@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<p>Current team members: </p>
+<% if !@team_members.nil? %>
+  <% @team_members.each do |member| %>
+    <%= member.proper_name %>
+  <% end %>
+<% end %>
 
 
 
@@ -8,12 +14,14 @@
 Schedule goes here
 </p>
 </br>
+
+<%= link_to 'Upload your schedule', new_team_member_path(:meeting_id => @meeting.id) %>
+
 <h3>Participation Link</h3>
 <a href="javascript:ReverseDisplay('share')">
 Click to share this meeting with whoever you'd like:
 </a>
 
-<%= link_to 'Upload your schedule', new_team_member_path(:meeting_id => @meeting.id) %>
 
 
 <div id="share" style="display:none;">

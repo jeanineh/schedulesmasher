@@ -22,7 +22,6 @@
 <%= form_tag uploader_path, :method => 'get' do %>
   <%= hidden_field_tag :id, params[:id] %>
   <label for="file">Select a calendar</label><%= file_field_tag "file" %>
-
   <%= submit_tag 'Upload'%>
 <% end %>
 
