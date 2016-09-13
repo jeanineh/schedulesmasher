@@ -10,7 +10,7 @@ class TeamMembersController < ApplicationController
   # GET /team_members/1
   # GET /team_members/1.json
   def show
-    @events = session[:cal]
+    @events = @team_member.calendar_events.all
   end
 
   # GET /team_members/new
@@ -66,10 +66,7 @@ class TeamMembersController < ApplicationController
     @team_member = TeamMember.find(params[:id])
     uploaded_file = params[:file]
     eventsArray = TeamMember.read_file(uploaded_file)
-    #Meeting.save_to_db(eventsArray)
-
-    session[:cal] = eventsArray[0]
-
+    @team_member.save_events(eventsArray)
     respond_to do |format|
       format.html { redirect_to @team_member, notice: 'Schedule successfully uploaded.' }
     end

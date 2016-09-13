@@ -3,6 +3,7 @@ class TeamMember < ActiveRecord::Base
   #include CalendarEventsHelper::Calendar
 
   belongs_to :meeting
+  has_many :calendar_events
 
   # gets an array of calendar events
   def self.read_file(filename)
@@ -21,6 +22,17 @@ class TeamMember < ActiveRecord::Base
 
     return allEvents
   end
+
+  def save_events(events)
+    events.each do |event|
+      new_calendar_event = CalendarEvent.new
+      new_calendar_event.team_member_id = self.id 
+      new_calendar_event.start = event[0]
+      new_calendar_event.end = event[1]
+      new_calendar_event.save
+    end
+  end
+
 
   def proper_name
     "#{name}"
