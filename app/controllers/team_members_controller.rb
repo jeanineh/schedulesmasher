@@ -10,6 +10,7 @@ class TeamMembersController < ApplicationController
   # GET /team_members/1
   # GET /team_members/1.json
   def show
+    @events = session[:cal]
   end
 
   # GET /team_members/new
@@ -58,6 +59,19 @@ class TeamMembersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to team_members_url, notice: 'Team member was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def uploader
+    @team_member = params[:id]
+    uploaded_file = params[:file]
+    eventsArray = TeamMember.read_file(uploaded_file)
+    #Meeting.save_to_db(eventsArray)
+
+    session[:cal] = eventsArray[0]
+
+    respond_to do |format|
+      format.html { redirect_to @team_member, notice: 'Schedule successfully uploaded.' }
     end
   end
 
