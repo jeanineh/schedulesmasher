@@ -21,14 +21,6 @@ ActiveRecord::Schema.define(version: 20160911162206) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "start_at"
-    t.datetime "end_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "meetings", force: :cascade do |t|
     t.string   "title"
     t.string   "description"

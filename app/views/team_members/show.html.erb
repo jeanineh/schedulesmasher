@@ -19,7 +19,7 @@
   <%= @team_member.meeting_id %>
 </p>
 
-<%= form_tag uploader_path, :method => 'get' do %>
+<%= form_tag uploader_path, :method => 'get', :html =>  { multipart: true } do %>
   <%= hidden_field_tag :id, params[:id] %>
   <label for="file">Select a calendar</label><%= file_field_tag "file" %>
   <%= submit_tag 'Upload'%>
