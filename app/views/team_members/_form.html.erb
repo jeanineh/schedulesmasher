@@ -20,8 +20,7 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :meeting_id %><br>
-    <%= f.text_field :meeting_id %>
+    <%= f.hidden_field :meeting_id, value: params[:meeting_id] %>
   </div>
   <div class="actions">
     <%= f.submit %>
