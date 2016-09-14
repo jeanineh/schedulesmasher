@@ -22,7 +22,7 @@ class Meeting < ActiveRecord::Base
 	end
 
 
-	def self.save_to_db(eventsArray)
-		for event in eventsArray
-	end
+	#def self.save_to_db(eventsArray)
+	#	for event in eventsArray
+	#end
 end
