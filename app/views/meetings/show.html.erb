@@ -1,24 +1,11 @@
 <p id="notice"><%= notice %></p>
-<% if !@testt.nil? %>
-	<% @testt.each do |t| %>
-		<%= t %>
-	<% end %>
+<p>Current team members: </p>
+<% if !@team_members.nil? %>
+  <% @team_members.each do |member| %>
+    <%= member.proper_name %>
+  <% end %>
 <% end %>
-<p>
-  <h2><%= @meeting.title %></h2>
-</p>
 
-<p>
-  <%= @meeting.description %>
-</p>
-
-<%= form_tag uploader_path, :method => 'get' do %>
-  <%= hidden_field_tag :id, params[:id] %>
-  <%= hidden_field_tag :team_member_id, params[:id] %>
-  <label for="file">Select a calendar</label><%= file_field_tag "file" %>
-
-  <%= submit_tag 'Upload'%>
-<% end %>
 
 
 
@@ -27,10 +14,14 @@
 Schedule goes here
 </p>
 </br>
+
+<%= link_to 'Upload your schedule', new_team_member_path(:meeting_id => @meeting.id) %>
+
 <h3>Participation Link</h3>
 <a href="javascript:ReverseDisplay('share')">
 Click to share this meeting with whoever you'd like:
 </a>
+
 
 
 <div id="share" style="display:none;">
