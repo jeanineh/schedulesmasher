@@ -1,5 +1,6 @@
 class TeamMember < ActiveRecord::Base
   require 'icalendar'
+  require 'date'
   #include CalendarEventsHelper::Calendar
 
   belongs_to :meeting
@@ -17,7 +18,9 @@ class TeamMember < ActiveRecord::Base
     for event in events
       # Each event is stored in the allEvents array as an array [<starttime>, <endtime>]
       newEvent = [event.dtstart, event.dtend]
-      allEvents.append(newEvent)
+      if ((newEvent[0] > DateTime.now) && (newEvent[0] < 7.days.from_now))
+        allEvents.append(newEvent)
+      end
     end
 
     return allEvents
