@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <% if !@events.nil? %>
-	<% @events.each do |event| %>
-		<%= event.to_date %>
+	<% @events.each do |key, value| %>
+		<strong><%= key %></strong>: <%= value %> <br>
 	<% end %>
 <% end %>
 <p>

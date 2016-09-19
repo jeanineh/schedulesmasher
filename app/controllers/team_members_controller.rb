@@ -10,7 +10,7 @@ class TeamMembersController < ApplicationController
   # GET /team_members/1
   # GET /team_members/1.json
   def show
-    @events = @team_member.calendar_events.all
+    @events = TeamMember.smash(@team_member.meeting)
   end
 
   # GET /team_members/new

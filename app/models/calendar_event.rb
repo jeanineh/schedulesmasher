@@ -1,7 +1,7 @@
 class CalendarEvent < ActiveRecord::Base
   belongs_to :team_member
 
-  def to_date
+  def name
     "#{self.start}, #{self.end}"
   end
 
