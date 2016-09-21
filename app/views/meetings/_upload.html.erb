@@ -1,21 +1,13 @@
-<div style="background:transparent";class="jumbotron">
-<p id="notice"><%= notice %></p>
-</div>
+<a href=<%=new_team_member_path(:meeting_id => @meeting.id)%> class="btn btn-small btn-default">Upload Schedule</a>
 
-
-
-
-
-<div style="width: 90%;">
-   <div style="float:left; width: 50%">
-   <%= render :partial => "upload"%>
-   </div>
-   <div style="float:right;">
-   <%= render :partial => "schedule"%>
-   </div>
-</div>
-<div style="clear:both"></div>
-
+   <a href="javascript:ReverseDisplay('share')" class="btn btn-small btn-default">
+	Participation Link
+	</a>
+	</br>
+	<div id="share" style="display:none;">
+	http://localhost:3000/meetings/<%= @meeting.id %>
+	</div>
+	</br>
 
 <script type="text/javascript" language="JavaScript"><!--
 function HideContent(d) {
@@ -29,5 +21,3 @@ if(document.getElementById(d).style.display == "none") { document.getElementById
 else { document.getElementById(d).style.display = "none"; }
 }
 //--></script>
-
-
