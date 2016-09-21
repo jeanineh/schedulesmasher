@@ -68,7 +68,7 @@ class TeamMembersController < ApplicationController
     eventsArray = TeamMember.read_file(uploaded_file)
     @team_member.save_events(eventsArray)
     respond_to do |format|
-      format.html { redirect_to @team_member, notice: 'Schedule successfully uploaded.' }
+      format.html { redirect_to @team_member.meeting, notice: 'Schedule successfully uploaded.' }
     end
   end
 

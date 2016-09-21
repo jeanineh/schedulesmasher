@@ -3,13 +3,25 @@
 	<%number = @meeting.get_team_members_by_hour(cell_begin_time)%>
 	<%if number > 0 && (number < @meeting.team_members.length) %>
 		<%color = "yellow"%>
-	<%elsif number == @meeting.team_members.length%>
+	<%elsif number == @meeting.team_members.length && @meeting.team_members.length>0%>
 		<%color = "red"%>
 	<%else%>
 		<%color = "limegreen"%>
 	<%end%>
 	<%if cell_begin_time.hour >= 8 && cell_begin_time.hour <= 24%> 
+
 	<%=content_tag(:div, cell_begin_time.strftime("%I:%M %p"), class: ["btn btn-small btn-default"], style: "height: 45px; background: "+color)%>
 	<% end %>
 </div>
 <% end %>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Email" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    </br>
+    EMAIIIILLL
+    </br>
+    </br>
+    </div>
+  </div>
+</div>
