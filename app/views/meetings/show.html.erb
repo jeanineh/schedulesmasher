@@ -1,34 +1,28 @@
 <div style="background:transparent";class="jumbotron">
 <p id="notice"><%= notice %></p>
 </div>
-<div class="row">
-<div class="span7">
-<img src="https://static.wixstatic.com/media/aba510_9fa6382ed2d24d8684c59189fcbc3f8d~mv2.png/v1/fill/w_1039,h_698,al_c,usm_0.66_1.00_0.01/aba510_9fa6382ed2d24d8684c59189fcbc3f8d~mv2.png">
 
-</div>
-</div>
+
 </br>
 
-<div style="background:white";class="jumbotron">
-<a href="javascript:ReverseDisplay('share')" class="btn btn-small btn-default">
-Participation Link
-</a>
-</br>
-<div id="share" style="display:none;">
-http://localhost:3000/meetings/<%= @meeting.id %>
+
+<div style="width: 90%;">
+   <div style="float:left; width: 50%">
+   <a href=<%=new_team_member_path(:meeting_id => @meeting.id)%> class="btn btn-small btn-default">Upload Schedule</a>
+   <a href="javascript:ReverseDisplay('share')" class="btn btn-small btn-default">
+	Participation Link
+	</a>
+	</br>
+	<div id="share" style="display:none;">
+	http://localhost:3000/meetings/<%= @meeting.id %>
+	</div>
+   </div>
+   <div style="float:right;">
+   <%= render :partial => "schedule"%>
+   </div>
 </div>
-</br>
-<a href=<%=new_team_member_path(:meeting_id => @meeting.id)%> class="btn btn-small btn-default">Upload Schedule</a>
-</br>
-<% if !@team_members.nil? %>
-  <% "Current team members:" %>
-  <% @team_members.each do |member| %>
-    <%= member.proper_name %>
-  <% end %>
-<% end %>
-</br>
-</br>
-</div>
+<div style="clear:both"></div>
+
 
 <script type="text/javascript" language="JavaScript"><!--
 function HideContent(d) {
