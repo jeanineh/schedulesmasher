@@ -26,10 +26,9 @@ class TeamMembersController < ApplicationController
   # POST /team_members.json
   def create
     @team_member = TeamMember.new(team_member_params)
-
     respond_to do |format|
       if @team_member.save
-        format.html { redirect_to @team_member, notice: 'Team member was successfully created.' }
+        format.html { redirect_to @team_member.meeting, notice: 'Schedule was successfully uploaded' }
         format.json { render :show, status: :created, location: @team_member }
       else
         format.html { render :new }
