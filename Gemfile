@@ -30,6 +30,7 @@ gem 'simple_form'
 gem "nested_form"
 gem 'validates_timeliness', '~> 4.0'
 gem 'calendrier', :git => "git://github.com/CatsFromMars/calendrier.git", :branch => "master"
+gem 'bootstrap_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
