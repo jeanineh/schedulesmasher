@@ -1,23 +1,21 @@
+
+<!-- Upload Schedule -->
 <a href=<%=new_team_member_path(:meeting_id => @meeting.id)%> class="btn btn-small btn-default">Upload Schedule</a>
 
-   <a href="javascript:ReverseDisplay('share')" class="btn btn-small btn-default">
-	Participation Link
-	</a>
-	</br>
-	<div id="share" style="display:none;">
-	http://localhost:3000/meetings/<%= @meeting.id %>
-	</div>
-	</br>
 
-<script type="text/javascript" language="JavaScript"><!--
-function HideContent(d) {
-document.getElementById(d).style.display = "none";
-}
-function ShowContent(d) {
-document.getElementById(d).style.display = "block";
-}
-function ReverseDisplay(d) {
-if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
-else { document.getElementById(d).style.display = "none"; }
-}
-//--></script>
+<!-- Large modal -->
+<button class="btn btn-small btn-default" data-toggle="modal" data-target=".bd-example-modal-lg">Participation Link</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Participation Link" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    </br>
+    <h4 class="modal-title" id="gridModalLabel">Use this link to share this meeting with your team members!</h4>
+    </br>
+      http://localhost:3000/meetings/<%= @meeting.id %>
+    </br>
+    </br>
+    </br>
+    </div>
+  </div>
+</div>
