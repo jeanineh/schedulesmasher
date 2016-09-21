@@ -1,6 +1,5 @@
 class TeamMembersController < ApplicationController
   before_action :set_team_member, only: [:show, :edit, :update, :destroy]
-
   # GET /team_members
   # GET /team_members.json
   def index
@@ -26,6 +25,7 @@ class TeamMembersController < ApplicationController
   # POST /team_members.json
   def create
     @team_member = TeamMember.new(team_member_params)
+
     respond_to do |format|
       if @team_member.save
         format.html { redirect_to @team_member.meeting, notice: 'Schedule was successfully uploaded' }

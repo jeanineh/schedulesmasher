@@ -1,7 +1,8 @@
-<div style="background:transparent";class="jumbotron">
-<p id="notice"><%= notice %></p>
-</div>
-
+<% unless notice.nil? %>
+  <div class="alert alert-success">
+    <%= notice %>
+  </div>
+<% end %>
 
 
 
