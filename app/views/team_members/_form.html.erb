@@ -1,5 +1,7 @@
-<%= form_for(@team_member) do |f| %>
-  <% if @team_member.errors.any? %>
+<div style="float:right; padding:50px;">
+<h2>Participate in This Meeting</h2>
+<%= bootstrap_form_for(team_member) do |f| %>
+  <% if team_member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@team_member.errors.count, "error") %> prohibited this team_member from being saved:</h2>
 
@@ -10,19 +12,49 @@
       </ul>
     </div>
   <% end %>
-
+  <div style="float:right; width: 100%">
   <div class="field">
-    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.hidden_field :meeting_id, value: params[:meeting_id] %>
+    <%= f.hidden_field :meeting_id, value: @meeting.id %>
+  </div>
+  <div class="field">
+    <center><%= f.file_field "file" %></center>
   </div>
   <div class="actions">
-    <%= f.submit %>
+  </br>
+    <%= f.submit "Upload Schedule" %>
   </div>
 <% end %>
+
+
+
+</br>
+</br>
+</br>
+<!-- Large modal -->
+<button class="btn btn-small btn-default" data-toggle="modal" data-target=".bd-example-modal-lg">Participation Link</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Participation Link" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    </br>
+    <h4 class="modal-title" id="gridModalLabel">Use this link to share this meeting with your team members!</h4>
+    </br>
+      http://localhost:3000/meetings/<%= @meeting.id %>
+    </br>
+    </br>
+    </br>
+    </div>
+  </div>
+</div>
+</br>
+
+
+
+</div>
+</div>
