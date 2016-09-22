@@ -6,9 +6,9 @@ class Meeting < ActiveRecord::Base
 		count = 0
 		team_members.each do |member|
 			member.calendar_events.each do |event|
-				if(given_date.hour >= event.start.hour)&&(given_date.hour < event.end.hour)&&(given_date.day==event.start.day)
+				#if(given_date.hour >= event.start.hour)&&(given_date.hour < event.end.hour)&&(given_date.day==event.start.day)
 				count = count+1
-				end
+				#end
 			end
 		end
 		return count
