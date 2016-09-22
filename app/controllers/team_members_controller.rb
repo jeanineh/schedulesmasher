@@ -28,7 +28,10 @@ class TeamMembersController < ApplicationController
 
     respond_to do |format|
       if @team_member.save
-        format.html { redirect_to @team_member.meeting, notice: 'Schedule was successfully uploaded' }
+            uploaded_file = params[:team_member][:file].path
+    eventsArray = TeamMember.read_file(uploaded_file)
+    @team_member.save_events(eventsArray)
+        format.html { redirect_to @team_member.meeting, notice: 'Calendar was successfully smashed!' }
         format.json { render :show, status: :created, location: @team_member }
       else
         format.html { render :new }
@@ -64,10 +67,12 @@ class TeamMembersController < ApplicationController
   def uploader
     @team_member = TeamMember.find(params[:id])
     uploaded_file = params[:file]
+    puts "--------------------------------------------------------------------------------------"
+    puts uploaded_file
     eventsArray = TeamMember.read_file(uploaded_file)
     @team_member.save_events(eventsArray)
     respond_to do |format|
-      format.html { redirect_to @team_member.meeting, notice: 'Schedule successfully uploaded.' }
+      format.html { redirect_to @team_member, notice: 'Schedule successfully uploaded.' }
     end
   end
 

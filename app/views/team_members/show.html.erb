@@ -6,7 +6,7 @@
     <%= hidden_field_tag :id, params[:id] %>
   <center><%= file_field_tag "file" %></center>
   </br>
-    <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+    <%= button_tag(type: 'submit') do %>
   <i class="icon-ok icon-white"></i> Upload Schedule
   <% end %>
   <% end %>
@@ -14,8 +14,8 @@
 <%= link_to 'Edit', edit_team_member_path(@team_member) %> |
 <%= link_to 'Back', team_members_path %>
 
-<% if !@events.nil? %>
-	<% @events.each do |key, value| %>
-		<strong><%= key %></strong>: <%= value %> <br>
+</br>
+<%=@events%></br>
+	<% @events.each do |value| %>
+		<%= value %></br>
 	<% end %>
-<% end %>
