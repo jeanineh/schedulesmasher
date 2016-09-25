@@ -18,9 +18,9 @@ class TeamMember < ActiveRecord::Base
     for event in events
       # Each event is stored in the allEvents array as an array [<starttime>, <endtime>]
       newEvent = [event.dtstart, event.dtend]
-      if ((newEvent[0] > DateTime.now) && (newEvent[0] < 7.days.from_now))
+      #if ((newEvent[0] > DateTime.now) && (newEvent[0] < 7.days.from_now))
         allEvents.append(newEvent)
-      end
+      #end
     end
 
     return allEvents
@@ -42,13 +42,11 @@ class TeamMember < ActiveRecord::Base
 
       if !cal_dict[date].nil?
         curr_dates = cal_dict[date]
-        curr_dates.append(times)
-        cal_dict[date] = curr_dates
       else 
         curr_dates = []
-        curr_dates.append(times)
-        cal_dict[date] = curr_dates
       end
+      curr_dates.append(times)
+      cal_dict[date] = curr_dates
     end
 
     return cal_dict
@@ -66,7 +64,9 @@ class TeamMember < ActiveRecord::Base
         team_cal.each do |key, value| 
           if !smashed_cal[key].nil?
             smash_val = smashed_cal[key]
-            smash_val.append(team_cal[key])
+            team_cal[key].each do |event|
+              smash_val.append(event)
+            end
             smashed_cal[key] = smash_val
           else 
             smashed_cal[key] = value

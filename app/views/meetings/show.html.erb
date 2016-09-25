@@ -3,32 +3,19 @@
     <%= notice %>
   </div>
 <% end %>
-
-
-
-
-<div style="width: 90%;">
-   <div style="float:left; width: 50%">
-   <%= render :partial => "upload"%>
-   </div>
-   <div style="float:right;">
-   <%= render :partial => "schedule"%>
-   </div>
+<section class="display">
+  <div class="row container-fluid">
+     <div class="col-md-5">
+      <div style="padding-top:100px; width:75%; margin:auto;">
+         <%= render 'team_members/form', :team_member => TeamMember.new %>
+         <%= render :partial => "upload"%>
+      </div>
+    </div>
+    <div class="col-md-7">
+       <%= render :partial => "schedule"%>
+    </div>
+  </div>
 </div>
-<div style="clear:both"></div>
-
-
-<script type="text/javascript" language="JavaScript"><!--
-function HideContent(d) {
-document.getElementById(d).style.display = "none";
-}
-function ShowContent(d) {
-document.getElementById(d).style.display = "block";
-}
-function ReverseDisplay(d) {
-if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
-else { document.getElementById(d).style.display = "none"; }
-}
-//--></script>
+</section>
 
 
