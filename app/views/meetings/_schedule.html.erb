@@ -1,11 +1,9 @@
 <%= calendrier(:year => 2016, :month => Time.now.month, :day => Time.now.day, :start_on_monday => true, :display => :week) do |cell_begin_time, cell_end_time| %>
 <div class="span2">
 	<%number = @meeting.get_team_members_by_hour(cell_begin_time)%>
-	<%#if number > 0 && (number < @meeting.team_members.length) %>
-	<%if number > 1 && @meeting.team_members.length>0 && cell_begin_time.hour > 11 && cell_begin_time.hour < 13%>
+	<%if number > 0 && (number < @meeting.team_members.length) %>
 		<%color = "red"%>
-	<%#elsif number == @meeting.team_members.length && @meeting.team_members.length>1%>
-	<%elsif @meeting.team_members.length>0 && cell_begin_time.hour > 12 && cell_begin_time.hour <= 15%>
+	<%elsif number == @meeting.team_members.length && @meeting.team_members.length>1%>
 		<%color = "#ffd040"%>
 	<%else%>
 		<%color = "#70ad47"%>
@@ -15,6 +13,9 @@
 	<% end %>
 </div>
 <% end %>
+
+<%= button_to 'SEND EMAIL', send_email_path(@meeting), method: :post %>
+
 
 <div class="bd-example">
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Finalize Meeting Time</button>
