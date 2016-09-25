@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body background="http://i.imgur.com/stnfa7x.jpg">
+<body>
 <head>
   <title>S C H E D U L E  S M A S H E R</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -8,19 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-       
-
-<%= yield %>
-       
-
-      </div>
-
-    </div>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <%= yield %>
+  </div>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

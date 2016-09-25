@@ -23,16 +23,36 @@ a:hover {
   color: #fff;
 }
 
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
 /* Custom default button */
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: transparent;
 }
 
+/* Sections and containers */
+.home-container {
+  background-image: url("background2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 700px;
+}
+
+.cover-container {
+  height: 100%;
+}
+
+.how-container {
+  background-color: #fff;
+  height: 500px;
+}
 
 /*
  * Base structure
@@ -67,9 +87,24 @@ body {
   margin-left: auto;
 }
 
+
+.lead {
+  color: #fff;
+}
+
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+}
+
+
+/* Helpers */
+.valign-wrapper {
+  display: inline-flex;
+  height: 100%
+}
+
+.valign {
+  margin: auto;
 }
 
 
@@ -127,8 +162,17 @@ body {
   padding: 0 20px;
 }
 .cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
+  padding: 10px 40px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2em;
+  border: 4px solid #f48e09;
+  border-radius: 15px;
+}
+
+.cover-heading {
+  letter-spacing: 10px;
+  color: #fff;
 }
 
 

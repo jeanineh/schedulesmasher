@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Schedulesmasher</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
+  <head>
+    <title>Schedulesmasher</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
-       
-
-<%= yield %>
-       
-
+        <%= yield %>
       </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript

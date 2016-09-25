@@ -47,11 +47,6 @@ of those sections to manage the look and feel of the site. */
     background: #eee;
 }
 
-.home-container{
-    padding-top: 300px;
-    padding-bottom: 300px;
-}
-
 .services-section {
     height: 100%;
     padding-top: 150px;
