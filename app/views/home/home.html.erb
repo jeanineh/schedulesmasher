@@ -1,56 +1,79 @@
 <!-- Custom CSS -->
 <link href="css/scrolling-nav.css" rel="stylesheet">
 <section id="intro"></section>
+
+<!-- hero -->
 <div id="section1">
-<title>Schedule Smasher</title><p>
-<div class="home-container">
-        <div class="cover-container">
-          <div class="inner cover">
-            <h1 class="cover-heading">S C H E D U L E  S M A S H E R</h1>
-            </br>
-            <p class="lead"><b>Plan and organize common meeting times</b>
-            </p>
-            </br>
-            <p class="lead">
-              <a href=<%=new_meeting_path%> class="btn btn-lg btn-default">Get Started</a>
-            </p>
-            </br>
-            </br>
-            </br>
-            <a href="#about">About</a>
-          </div>
-          </div>
-          </br>
-          </br>
+  <title>Schedule Smasher</title>
+  <div class="home-container">
+    <div class="cover-container valign-wrapper">
+      <div class="inner cover valign">
+        <h1 class="cover-heading">SCHEDULE SMASHER</h1></br>
+        <p class="lead"><b>Plan and organize common meeting times</b></p></br>
+        <p class="lead"><a href=<%=new_meeting_path%> class="btn btn-lg btn-default">Get Started</a></p>
+        </br><br> 
+      </div>
+    </div>
+    </br></br>
+  </div>
 </div>
+
+<!-- How it works section -->
+<div class="how-container">
+  <div class="container">
+    <h1>How It Works</h1>
+    <div class="row">
+      <div class="col-sm-3 col-xs-12">
+          <span><%= image_tag("meeting.png") %></span>
+          <p>Create A New <br>Meeting Request</p>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+          <span><%= image_tag("save.png") %></span>
+          <p>Share <br>Participation URL</p>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+          <span><%= image_tag("upload.png") %></span>
+          <p>Upload Your<br> Schedule</p>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+          <span><%= image_tag("view.png") %></span>
+          <p>View Smashed Schedule</p>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 <!--About-->
-    <!-- About Section -->
-    <div class ="about-container">
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>About Section</h1>
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at efficitur tortor. Integer metus tellus, convallis id cursus id, tristique nec sem. Mauris luctus erat at erat molestie, id luctus turpis tempus. Donec lorem lectus, rutrum eu rutrum ac, dapibus ut lectus. Donec gravida porta tincidunt. Sed risus libero, cursus quis velit vulputate, euismod vestibulum metus. Curabitur in eleifend tellus.
-                    </p>
-                    <a class="btn btn-default page-scroll" href="#intro">Back</a>
-                </div>
-            </div>
+<!-- About Section -->
+<div class="about-container">
+  <section id="about" class="about-section">
+    <div class="container">
+      <h1>About Schedule Smasher</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>We Respect Your Privacy</h4>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at efficitur tortor. Integer metus tellus, convallis id cursus id, tristique nec sem. Mauris luctus erat at erat molestie, id luctus turpis tempus. Donec lorem lectus, rutrum eu rutrum ac, dapibus ut lectus. Donec gravida porta tincidunt. Sed risus libero, cursus quis velit vulputate, euismod vestibulum metus. Curabitur in eleifend tellus.
+          </p>
         </div>
+        <div class="col-md-6">
+          <h4>We Are Listening</h4>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at efficitur tortor. Integer metus tellus, convallis id cursus id, tristique nec sem. Mauris luctus erat at erat molestie, id luctus turpis tempus. Donec lorem lectus, rutrum eu rutrum ac, dapibus ut lectus. Donec gravida porta tincidunt. Sed risus libero, cursus quis velit vulputate, euismod vestibulum metus. Curabitur in eleifend tellus.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+</div>
 
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Scrolling Nav JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scrolling-nav.js"></script>
+<!-- Scrolling Nav JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>

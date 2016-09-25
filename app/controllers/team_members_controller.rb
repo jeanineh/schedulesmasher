@@ -25,6 +25,10 @@ class TeamMembersController < ApplicationController
   # POST /team_members.json
   def create
     @team_member = TeamMember.new(team_member_params)
+    uploaded_file = params[:team_member][:file].tempfile
+    eventsArray = TeamMember.read_file(uploaded_file)
+    @team_member.save_events(eventsArray)
+
 
     respond_to do |format|
       if @team_member.save
@@ -71,8 +75,6 @@ class TeamMembersController < ApplicationController
   def uploader
     @team_member = TeamMember.find(params[:id])
     uploaded_file = params[:file]
-    puts "--------------------------------------------------------------------------------------"
-    puts uploaded_file
     eventsArray = TeamMember.read_file(uploaded_file)
     @team_member.save_events(eventsArray)
     respond_to do |format|

@@ -1,5 +1,4 @@
-<div style="padding-left:500px;padding-right:500px;">
-<%= bootstrap_form_for(@meeting) do |f| %>
+<%= bootstrap_form_for(@meeting, layout: :horizontal) do |f| %>
   <% if @meeting.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
@@ -21,4 +20,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-</div>
