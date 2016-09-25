@@ -1,32 +1,21 @@
-
-<!--RENDER PARTIAL!-->
-<%= render 'team_members/form', :team_member => TeamMember.new %>
-
 <!-- Upload Schedule -->
 <!-- <a href=<%#=new_team_member_path(:meeting_id => @meeting.id)%> class="btn btn-small btn-default">Upload Schedule</a>-->
 
-<div class="jumbotron", style="float:right; padding-left:200px; padding-top:50px;">
-<div style="float:right; align:right; padding-right:200px">
-  <center><h2>Share This Meeting</h2>
-  <hr class="m-y-2">
-  <p class="lead">
-    <button class="btn btn-small btn-default" data-toggle="modal" data-target=".bd-example-modal-lg">Participation Link</button>
-  </p>
-</div>
+<p class="lead">
+  <button class="btn btn-small btn-default" data-toggle="modal" data-target=".bd-example-modal-lg">Participation Link</button>
+</p>
 
 <!-- Large modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Participation Link" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-    </br>
-    <h4 class="modal-title" id="gridModalLabel">Use this link to share this meeting with your team members!</h4>
-    </br>
-      http://localhost:3000/meetings/<%= @meeting.id %>
-    </br>
-    </br>
-    </br>
-    </div>
+      </br>
+      <h4 class="modal-title" id="gridModalLabel">Use this link to share this meeting with your team members!</h4>
+      </br>
+        http://localhost:3000/meetings/<%= @meeting.id %>
+      </br>
+      </br>
+      </br>
     </div>
   </div>
 </div>
-</br>

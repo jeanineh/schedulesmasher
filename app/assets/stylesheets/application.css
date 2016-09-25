@@ -23,9 +23,30 @@ a:hover {
   color: #fff;
 }
 
-h1 {
+body {
+  background-color: #fff;
+}
+
+
+h1, h2 {
   margin: 0;
   padding: 0;
+  text-shadow: none;
+}
+
+h4, p {
+  text-shadow: none;
+}
+
+th {
+  text-shadow: none;
+}
+
+/* heading class */
+.heading-red {
+  color: #f23f1f;
+  letter-spacing: 5px;
+  padding-bottom: 30px;
 }
 
 /* Custom default button */
@@ -50,8 +71,99 @@ h1 {
 }
 
 .how-container {
+  padding-top: 50px;
+  padding-bottom: 100px;
   background-color: #fff;
-  height: 500px;
+  display: block;
+  height: auto;
+}
+
+.how-container img {
+  margin: 70px 10px 30px 10px;
+  width: 220px;
+}
+
+.how-container h1 {
+  color: #f23f1f;
+  letter-spacing: 10px;
+  margin: 0;
+  padding-top: 50px;
+}
+
+.how-container p {
+  letter-spacing: 2px;
+  font-size: 1.6em;
+  line-height: 1.5;
+  font-weight: none;
+}
+
+.about-container {
+  background-color: #e5e5e5;
+  display: block;
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+.about-container .container {
+  width: 90%;
+}
+
+.about-container p {
+  text-align: left;
+  font-size: 1.3em;
+  line-height: 1.5;
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+.about-container h1 {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  color: #f23f1f;
+}
+
+.about-container h4 {
+  font-size: 1.5em;
+  text-align: left;
+  color: #f23f1f;
+  padding-left: 70px;
+}
+
+.display {
+  display: block;
+  height: auto;
+  padding: 50px 30px 100px 30px;
+}
+
+/* form styles */
+.form-container {
+  margin: auto;
+  width: 40%;
+}
+
+.form-control {
+  width: 70% !important;
+}
+
+input[type="text"] {
+  border-radius: 10px !important;
+  border: 1px solid #f23f1f !important;
+  color: #000 !important;
+}
+
+input[type="text"]:focus {
+  border-radius: 10px !important;
+  border: 2px solid #f23f1f !important;
+}
+
+label {
+  font-size: 1.2em;
+  text-shadow: none;
+}
+
+.field {
+  margin-bottom: 20px !important;
 }
 
 /*
@@ -168,6 +280,12 @@ body {
   font-size: 1.2em;
   border: 4px solid #f48e09;
   border-radius: 15px;
+}
+
+.cover .btn-lg:hover {
+  background-color: #fff;
+  color: #000;
+  border: 4px solid #f48e09;
 }
 
 .cover-heading {
