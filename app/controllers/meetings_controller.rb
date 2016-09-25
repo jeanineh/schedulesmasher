@@ -63,8 +63,12 @@ class MeetingsController < ApplicationController
   end
 
   def send_email
-    @team_member = @meeting.team_members
-    TeamMemberMailer.propose_time_msg(@team_member)
+    @meeting = Meeting.find(params[:id])
+    @team_member = @meeting.team_members.first
+    TeamMemberMailer.propose_time_msg(@team_member).deliver
+
+    redirect_to @meeting, notice: 'Email sent!'
+
   end
 
   
