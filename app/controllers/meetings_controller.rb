@@ -62,6 +62,11 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def send_email
+    @team_member = @meeting.team_members
+    TeamMemberMailer.propose_time_msg(@team_member)
+  end
+
   
 
 

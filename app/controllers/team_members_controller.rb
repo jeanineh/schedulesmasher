@@ -28,9 +28,13 @@ class TeamMembersController < ApplicationController
 
     respond_to do |format|
       if @team_member.save
-            uploaded_file = params[:team_member][:file].path
-    eventsArray = TeamMember.read_file(uploaded_file)
-    @team_member.save_events(eventsArray)
+
+        uploaded_file = params[:team_member][:file].path
+
+        TeamMemberMailer.propose_time_msg(@team_member).deliver
+
+        eventsArray = TeamMember.read_file(uploaded_file)
+        @team_member.save_events(eventsArray)
         format.html { redirect_to @team_member.meeting, notice: 'Calendar was successfully smashed!' }
         format.json { render :show, status: :created, location: @team_member }
       else
