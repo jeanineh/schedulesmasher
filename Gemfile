@@ -32,6 +32,9 @@ gem 'validates_timeliness', '~> 4.0'
 gem 'calendrier', :git => "git://github.com/CatsFromMars/calendrier.git", :branch => "master"
 gem 'bootstrap_form'
 
+# gem for sending email
+gem 'letter_opener'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

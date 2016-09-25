@@ -62,6 +62,18 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def send_email
+    @meeting = Meeting.find(params[:id])
+    @team_members = @meeting.team_members
+
+    @team_members.each do |member|
+      TeamMemberMailer.propose_time_msg(member).deliver
+    end
+
+    redirect_to @meeting, notice: 'Emails to all team members sent successfully.'
+
+  end
+
   
 
 
