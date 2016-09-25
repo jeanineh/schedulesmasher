@@ -31,7 +31,7 @@ class TeamMembersController < ApplicationController
 
         uploaded_file = params[:team_member][:file].path
 
-        TeamMemberMailer.propose_time_msg(@team_member).deliver
+        # TeamMemberMailer.propose_time_msg(@team_member, "2:00 pm").deliver
 
         eventsArray = TeamMember.read_file(uploaded_file)
         @team_member.save_events(eventsArray)

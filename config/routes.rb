@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/' => 'home#home', as: :home
   get 'meetings#show' => 'team_members#new'
   get 'uploader' => 'team_members#uploader', as: :uploader
-  post 'send_email/:id' => 'meetings#send_email', as: :send_email
+  post 'send_email/:id/:proposed_time' => 'meetings#send_email', as: :send_email
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
