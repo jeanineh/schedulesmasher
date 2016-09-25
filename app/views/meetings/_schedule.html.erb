@@ -8,13 +8,18 @@
 	<%else%>
 		<%color = "#70ad47"%>
 	<%end%>
-	<%if cell_begin_time.hour >= 8 && cell_begin_time.hour <= 24%> 
-	<%=content_tag(:div, cell_begin_time.strftime("%I:%M %p"), class: ["btn btn-small btn-default"], style: "height: 45px; background: "+color)%>
-	<% end %>
+	<%if cell_begin_time.hour >= 8 && cell_begin_time.hour <= 24%>
+
+	   <!-- <%=content_tag(:div, cell_begin_time.strftime("%I:%M %p"), class: ["btn btn-small btn-default"], style: "height: 45px; background: "+color) %> -->
+
+
+      <%= button_to cell_begin_time.strftime("%I:%M %p"), send_email_path(@meeting, cell_begin_time.strftime("%A %b %d @ %I:%M %p")), method: :post, class: ["btn btn-small btn-default"], style: "height: 45px; background: "+color %>
+	
+  <% end %>
 </div>
 <% end %>
 
-<%= button_to 'SEND EMAIL', send_email_path(@meeting, "2:00 pm"), method: :post %>
+<!-- <%= button_to 'SEND EMAIL', send_email_path(@meeting, "2:00 pm"), method: :post %> -->
 
 
 <div class="bd-example">
