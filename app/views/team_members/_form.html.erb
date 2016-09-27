@@ -1,10 +1,9 @@
 
-<h2 style="margin-bottom:50px;">Participate in This Meeting</h2>
+<h2 class = "upload-header">Upload Schedule</h2>
 <%= bootstrap_form_for(team_member, layout: :horizontal) do |f| %>
   <% if team_member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@team_member.errors.count, "error") %> prohibited this team_member from being saved:</h2>
-
       <ul>
       <% @team_member.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-  <div>
+  <div style="padding-top:20px">
     <div class="field">
       <%= f.text_field :name %>
     </div>
@@ -27,7 +26,7 @@
     </div>
     <div class="actions">
       </br>
-      <%= f.submit "Upload Schedule" %>
+      <%= f.submit 'Upload', class: 'btn btn-lg btn-upload' %>
     </div>
   </div>
 <% end %>
