@@ -79,8 +79,22 @@ th {
 }
 
 .how-container img {
+  background-color: #FF994B;
+  border: 2px solid #BD7B4E;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: 13px;
+}
+
+.how-container span {
+
   margin: 70px 10px 30px 10px;
-  width: 220px;
+  display: inline-block;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 2px solid #BD7B4E;;
 }
 
 .how-container h1 {
