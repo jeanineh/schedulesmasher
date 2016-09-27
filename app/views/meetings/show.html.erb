@@ -5,23 +5,20 @@
 <% end %>
 <section class="display">
   <div class="row container-fluid">
-     <div class="col-md-5">
-      <div style="padding-top:100px; width:75%; margin:auto;">
-      <div class="upload-table">
-         <%= render 'team_members/form', :team_member => TeamMember.new %>
-         </div>
-         </br>
-         <div class="upload-table">
-         <h2 class = "upload-header">Participation Link</h2>
-         </br>
-         <%= render :partial => "upload"%>
-         </div>
+    <div class="col-md-5">
+      <div class="box-label"><span>Upload Schedule</span></div>
+      <div id="new-team">
+        <%= render 'team_members/form', :team_member => TeamMember.new %>
+      </div>
+      <div class="box-label"><span>Share Meeting URL</span></div>
+      <div id="participation">
+        <%= render 'upload' %>
       </div>
     </div>
     <div class="col-md-7">
-        <p> Click one of the boxes to send a notification email to team members for the proposed meeting time. <p>
-       <%= render :partial => "schedule"%>
-    </div>
+      <p> Click one of the boxes to send a notification email to team members for the proposed meeting time. <p>
+      <%= render :partial => "schedule"%>
+    </p>
   </div>
 </div>
 </section>

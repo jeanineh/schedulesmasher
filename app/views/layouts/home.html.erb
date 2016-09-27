@@ -9,11 +9,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render 'layouts/nav' %>
 <div class="site-wrapper">
   <div class="site-wrapper-inner">
     <%= yield %>
   </div>
 </div>
+<%= render 'layouts/footer' %>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
