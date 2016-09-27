@@ -5,14 +5,18 @@
 <% end %>
 <section class="display">
   <div class="row container-fluid">
-     <div class="col-md-5">
-      <div style="padding-top:100px; width:75%; margin:auto;">
-         <%= render 'team_members/form', :team_member => TeamMember.new %>
-         <%= render :partial => "upload"%>
+    <div class="col-md-6">
+      <div class="box-label"><span>Upload Schedule</span></div>
+      <div id="new-team">
+        <%= render 'team_members/form', :team_member => TeamMember.new %>
+      </div>
+      <div class="box-label"><span>Share Meeting URL</span></div>
+      <div id="participation">
+        <%= render 'upload' %>
       </div>
     </div>
-    <div class="col-md-7">
-       <%= render :partial => "schedule"%>
+    <div class="col-md-6">
+      <%= render :partial => "schedule"%>
     </div>
   </div>
 </div>

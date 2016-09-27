@@ -147,7 +147,8 @@ th {
 .display {
   display: block;
   height: auto;
-  padding: 50px 30px 100px 30px;
+  padding: 100px;
+  width: 80%;
 }
 
 /* form styles */
@@ -162,23 +163,69 @@ th {
 
 input[type="text"] {
   border-radius: 10px !important;
-  border: 1px solid #f23f1f !important;
+  border: 1px solid #FFA42A !important;
   color: #000 !important;
 }
 
 input[type="text"]:focus {
   border-radius: 10px !important;
-  border: 2px solid #f23f1f !important;
+  border: 2px solid #FFA42A !important;
 }
 
-label {
+.cover-container label {
   font-size: 1.2em;
   text-shadow: none;
   color: #fff;
 }
 
+#new-team {
+  padding:50px 70px 50px 70px;
+  margin-bottom: 30px;
+  text-shadow: none;
+  background-color: #e5e5e5;
+}
+
+#new-team label {
+  color: #000;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+#new-team .form-control {
+  width: 70% !important;
+}
+
+#participation {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #e5e5e5;
+}
+
+.export .btn-small {
+  padding-left: 30px;
+  margin-right: 5px;
+  padding-right: 30px;
+  border-radius: 3px !important;
+}
+
 .field {
   margin-bottom: 20px !important;
+}
+
+.box-label {
+  display: inline-block;
+  background-color: #ED7D31;
+  height:50px;
+  width: 100%;
+}
+
+.box-label span {
+  padding-top: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5em;
+  color: #fff;
+  text-shadow: none;
 }
 
 /*
@@ -214,6 +261,15 @@ body {
   margin-left: auto;
 }
 
+.btn-small {
+  border: 2px solid #FFA42A !important;
+  border-radius: 15px !important;
+}
+
+.btn-small:hover {
+  color: #fff !important;
+  background-color: #ED7D31 !important;
+}
 
 .lead {
   color: #fff;
