@@ -25,16 +25,25 @@ class Meeting < ActiveRecord::Base
 		end
 		available_members = Array.new
 		team_members.each do |member|
-			if not m.include?(member)
+			if not m.include?(member.name)
 				available_members.push(member.name)
 			end
 		end
 
 		m_string = ""
-		available_members.each do |name|
-			m_string = m_string + "\n"+name
+		if available_members.length == 0
+			return "Nobody is available at this time."
 		end
-		return m_string
+		available_members.each do |name|
+			if name==available_members.last && available_members.length > 1
+				m_string = m_string + "and "+name
+			elsif available_members.length == 1
+				return name+" is available at this time."
+			else
+				m_string = m_string + name+"\n"
+			end
+		end
+		return m_string+" are all available at this time."
 	end
 
 	# def self.save_to_db(eventsArray)
