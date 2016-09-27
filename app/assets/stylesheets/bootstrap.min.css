@@ -7,3 +7,12 @@
 /* Modification:
  * Changed icon src from ../fonts/glyphicons-halflings-regular.* to ../assets/glyphicons-halflings-regular.*
  */
+
+.schedule-cell{
+	padding: 3px;
+}
+
+ .btn-schedule{
+  border-radius:0;
+  border: 0px solid transparent; /* this was 1px earlier */
+ }

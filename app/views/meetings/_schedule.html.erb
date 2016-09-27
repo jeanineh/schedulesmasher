@@ -1,55 +1,21 @@
 <%= calendrier(:year => 2016, :month => Time.now.month, :day => Time.now.day, :start_on_monday => true, :display => :week) do |cell_begin_time, cell_end_time| %>
 <div class="span2">
-	<%number = @meeting.get_team_members_by_hour(cell_begin_time)%>
-	<%if number > 0 && (number < @meeting.team_members.length) %>
-		<%color = "red"%>
-	<%elsif number == @meeting.team_members.length && @meeting.team_members.length>1%>
-		<%color = "#ffd040"%>
-	<%else%>
-		<%color = "#70ad47"%>
-	<%end%>
-	<%if cell_begin_time.hour >= 8 && cell_begin_time.hour <= 24%>
+  <%number = @meeting.get_team_members_by_hour(cell_begin_time)%>
+  <%if number == @meeting.team_members.length && (number > 1) %>
+    <%color = "#ed7d31"%>
+  <%elsif number < @meeting.team_members.length && number!=0%>
+    <%color = "#ffd040"%>
+  <%else%>
+    <%color = "#70c864"%>
+  <%end%>
+  <%if cell_begin_time.hour >= 8 && cell_begin_time.hour <= 24%>
 
-	   <!-- <%=content_tag(:div, cell_begin_time.strftime("%I:%M %p"), class: ["btn btn-small btn-default"], style: "height: 45px; background: "+color) %> -->
-
-
-      <%= button_to cell_begin_time.strftime("%I:%M %p"), send_email_path(@meeting, cell_begin_time.strftime("%A %b %d @ %I:%M %p")), method: :post, class: ["btn btn-small btn-default"], style: "height: 45px; background: "+color %>
-	
+     <div class = "schedule-cell">
+      <%= button_to "", send_email_path(@meeting, cell_begin_time.strftime("%A %b %d @ %I:%M %p")), method: :post, class: ["btn btn-schedule btn-default"], style: "height: 35px; width: 90px; background: "+color, title: @meeting.getMembersByTime(cell_begin_time)%>
+      </div>
+  
   <% end %>
 </div>
 <% end %>
 
 <!-- <%= button_to 'SEND EMAIL', send_email_path(@meeting, "2:00 pm"), method: :post %> -->
-
-
-<div class="bd-example">
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Finalize Meeting Time</button>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="exampleModalLabel">Email Team Members</h4>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="recipient-name" class="form-control-label">Time to Meet:</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="form-control-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
