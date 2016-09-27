@@ -233,7 +233,7 @@ input[type="text"]:focus {
 .cover-container label {
   font-size: 1.2em;
   text-shadow: none;
-  color: #000;
+  color: #fff;
 }
 
 .labelhome {
