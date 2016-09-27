@@ -7,12 +7,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body style="overflow:auto;">
+    <%= render 'layouts/navapp' %>
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <%= yield %>
       </div>
     </div>
+    <%= render 'layouts/footer' %>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
