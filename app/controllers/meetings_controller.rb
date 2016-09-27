@@ -63,11 +63,15 @@ class MeetingsController < ApplicationController
   end
 
   def send_email
+    puts("made it to send_email method first line")
     @meeting = Meeting.find(params[:id])
+    @proposed_time = params[:proposed_time]
+    puts("the proposed time is...")
+    puts(@proposed_time)
     @team_members = @meeting.team_members
 
     @team_members.each do |member|
-      TeamMemberMailer.propose_time_msg(member).deliver
+      TeamMemberMailer.propose_time_msg(member, @proposed_time).deliver
     end
 
     redirect_to @meeting, notice: 'Emails to all team members sent successfully.'
