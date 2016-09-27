@@ -39,7 +39,7 @@ class TeamMembersController < ApplicationController
 
         eventsArray = TeamMember.read_file(uploaded_file)
         @team_member.save_events(eventsArray)
-        format.html { redirect_to @team_member.meeting, notice: 'Calendar was successfully smashed!' }
+        format.html { redirect_to @team_member.meeting, notice: 'Calendar was successfully smashed! Please select a time on the schedule when done!' }
         format.json { render :show, status: :created, location: @team_member }
       else
         format.html { render :new }
