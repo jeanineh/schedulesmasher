@@ -5,7 +5,7 @@
 <% end %>
 <section class="display">
   <div class="row container-fluid">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="box-label"><span>Upload Schedule</span></div>
       <div id="new-team">
         <%= render 'team_members/form', :team_member => TeamMember.new %>
@@ -15,9 +15,10 @@
         <%= render 'upload' %>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
+      <p> Click one of the boxes to send a notification email to team members for the proposed meeting time. <p>
       <%= render :partial => "schedule"%>
-    </div>
+    </p>
   </div>
 </div>
 </section>

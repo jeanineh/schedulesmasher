@@ -184,8 +184,7 @@ nav .container-fluid {
 .display {
   display: block;
   height: auto;
-  padding: 100px;
-  width: 80%;
+  padding: 120px 50px 100px 50px;
 }
 
 /* form styles */
