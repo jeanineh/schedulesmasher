@@ -139,11 +139,11 @@ th {
 /* form styles */
 .form-container {
   margin: auto;
-  width: 40%;
+  width: 60%;
 }
 
 .form-control {
-  width: 70% !important;
+  width: 60% !important;
 }
 
 input[type="text"] {
@@ -160,6 +160,7 @@ input[type="text"]:focus {
 label {
   font-size: 1.2em;
   text-shadow: none;
+  color: #fff;
 }
 
 .field {

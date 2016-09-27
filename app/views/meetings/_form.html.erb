@@ -1,22 +1,9 @@
-<%= bootstrap_form_for(@meeting, layout: :horizontal) do |f| %>
-  <% if @meeting.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
-
-      <ul>
-      <% @meeting.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= bootstrap_form_for(Meeting.new, layout: :horizontal) do |f| %>
   <div class="field">
     <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.text_field :description %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <p class="lead"><%= f.submit 'Get Started', class: 'btn btn-lg btn-default' %></p>
 <% end %>
