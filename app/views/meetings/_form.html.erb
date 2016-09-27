@@ -1,9 +1,9 @@
 <%= bootstrap_form_for(Meeting.new, layout: :horizontal) do |f| %>
   <div class="field">
-    <%= f.text_field :title %>
+    <%= f.text_field :title, label_class:'labelhome' %>
   </div>
   <div class="field">
-    <%= f.text_field :description %>
+    <%= f.text_field :description, label_class:'labelhome' %>
   </div>
   <p class="lead"><%= f.submit 'Get Started', class: 'btn btn-lg btn-default' %></p>
 <% end %>
