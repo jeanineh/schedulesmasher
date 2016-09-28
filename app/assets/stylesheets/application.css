@@ -221,25 +221,25 @@ nav .container-fluid {
 
 input[type="text"] {
   border-radius: 10px !important;
-  border: 3px solid #f23f1f !important;
+  border: 3px solid #FFA42A !important;
   color: #000 !important;
 }
 
 input[type="text"]:focus {
   border-radius: 10px !important;
-  border: 2px solid #FFA42A !important;
+  border: 2px solid #f23f1f !important;
 }
 
 .cover-container label {
   font-size: 1.2em;
   text-shadow: none;
-  color: #000;
+  color: #fff;
 }
 
 .labelhome {
   font-size: 1.2em;
   text-shadow: none;
-  color: #fff;
+  color: #fff !important;
 }
 
 #new-team {
@@ -418,9 +418,9 @@ body {
 }
 
 .cover .btn-lg:hover {
-  background-color: #fff;
-  color: #000;
-  border: 4px solid #f48e09;
+  background-color: #ED7D31;
+  color: #fff !important;
+  border: 4px solid #f23f1f;
 }
 
 .cover-heading {
