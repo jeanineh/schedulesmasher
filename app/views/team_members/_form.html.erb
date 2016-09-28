@@ -19,8 +19,8 @@
     
     <div class="export">
       <label>Export Instructions</label><br>
-      <a class="btn btn-small btn-default" href="#">iCalendar</a>
-      <a class="btn btn-small btn-default" href="#">Google</a>
+      <span class="btn btn-small btn-default" data-toggle="modal" data-target="#ical">iCalendar</span>
+      <span class="btn btn-small btn-default" data-toggle="modal" data-target="#google">Google</span>
     </div>
 
     <div class="field">
@@ -36,3 +36,38 @@
     </div>
   </div>
 <% end %>
+
+<!-- iCalendar export instructions -->
+<div id="ical" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="iCalendar Export" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      </br>
+      <h4 class="modal-title" id="gridModalLabel">iCalendar Export Instructions</h4>
+      </br>
+        <ol style="width:20%;margin:auto;">
+          <li>Open iCalendar</li>
+          <li>Click on Calendar</li>
+          <li>File > Export</li>
+        </ol>
+        <br><br>
+    </div>
+  </div>
+</div>
+
+<!-- Google calendar export instructions -->
+<div id="google" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Google Export" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      </br>
+      <h4 class="modal-title" id="gridModalLabel">Google Calendar Export Instructions</h4>
+      </br>
+        <ol style="width:20%;margin:auto;">
+          <li>Open Google Calendar</li>
+          <li>Click on Calendar</li>
+          <li>Calendar Settings</li>
+          <li>Export this Calendar</li>
+        </ol>
+        <br><br>
+    </div>
+  </div>
+</div>

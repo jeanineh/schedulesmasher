@@ -424,6 +424,7 @@ body {
 }
 
 .cover-heading {
+  font-size: 3.5em;
   letter-spacing: 10px;
   color: #fff;
 }
